@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Referral Reward Calculator</title>
+<meta name="description" content="Calculate multi-level referral rewards and repeat purchases.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<main class="container">
+<header class="hero">
+<p class="eyebrow">Referral Network Tool</p>
+<h1>Referral Reward Calculator</h1>
+<p>Calculate network growth, multi-level rewards and repeat-purchase potential.</p>
+</header>
+
+<section class="card">
+<h2>Network Settings</h2>
+<div class="grid">
+<label>Product Price (₹)<input id="productPrice" type="number" min=".01" step=".01" value="16"></label>
+<label>Direct Referrals per User<input id="referralsPerUser" type="number" min="1" step="1" value="2"></label>
+<label>Number of Lines<input id="totalLines" type="number" min="1" step="1" value="12"></label>
+</div>
+</section>
+
+<section class="card">
+<div class="section-heading">
+<div><h2>Reward Settings</h2><p>Reward received for each purchase at each level above the purchaser.</p></div>
+<span class="badge">Up to 7 levels</span>
+</div>
+<div class="reward-grid">
+<label>1st Line (₹)<input id="reward1" type="number" min="0" step=".01" value="0.10"></label>
+<label>2nd Line (₹)<input id="reward2" type="number" min="0" step=".01" value="0.20"></label>
+<label>3rd Line (₹)<input id="reward3" type="number" min="0" step=".01" value="0.25"></label>
+<label>4th Line (₹)<input id="reward4" type="number" min="0" step=".01" value="0.45"></label>
+<label>5th Line (₹)<input id="reward5" type="number" min="0" step=".01" value="0.50"></label>
+<label>6th Line (₹)<input id="reward6" type="number" min="0" step=".01" value="0.75"></label>
+<label>7th Line (₹)<input id="reward7" type="number" min="0" step=".01" value="1.00"></label>
+</div>
+<button id="calculateBtn" type="button">CALCULATE</button>
+</section>
+
+<section id="results" class="results hidden" aria-live="polite">
+<div class="summary-grid">
+<div class="stat"><span>Total Network Users</span><strong id="totalUsers">—</strong></div>
+<div class="stat"><span>Initial Purchases</span><strong id="initialPurchases">—</strong></div>
+<div class="stat highlight"><span>Original User Rewards</span><strong id="originalRewards">—</strong></div>
+<div class="stat"><span>Reward-Based Purchases</span><strong id="rewardPurchases">—</strong></div>
+</div>
+
+<div class="card">
+<h2>Original User Result</h2>
+<div id="originalResult" class="notes"></div>
+</div>
+
+<div class="card">
+<h2>Network Breakdown</h2>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th>Line</th><th>Users</th><th>Reward / Purchase</th>
+<th>Purchases / User</th><th>Rewards Generated / User</th><th>Remaining Balance / User</th>
+</tr></thead>
+<tbody id="networkTable"></tbody>
+</table>
+</div>
+</div>
+
+<div class="card">
+<h2>Calculation Notes</h2>
+<div id="calculationNotes" class="notes"></div>
+</div>
+</section>
+
+<footer>All calculations are performed locally in your browser.</footer>
+</main>
+<script src="assets/js/calculator.js"></script>
+</body>
+</html>
